@@ -12,6 +12,9 @@ This script provides basic functionality so you may modify the script to your li
 ### Approach 
 ![abstract](https://user-images.githubusercontent.com/26379748/154967374-47a122f3-43e1-4bd8-92ef-51b130253567.png)
 
+### Download FLIP Fluids Addon
+You can now download the FLIP Fluids addon directly from the [GitHub Release](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/flip_fluids_addon.zip).
+
 ## Usage
 ### Upload type
 * `upload & rename` blender file ( particles.blend ) to google drive
