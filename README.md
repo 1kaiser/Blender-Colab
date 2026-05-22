@@ -1,26 +1,70 @@
-# Blender-Colab☁️
-# ✅<a href="https://colab.research.google.com/github/1kaiser/blender-colab/blob/master/BlenderColab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+# Blender-Colab ☁️
 
-### 🥳🥳👏 Thanks To Google Colaboratory Team for making this possible 🥳🥳🥳 ! [Colaboratory Release Notes](https://colab.research.google.com/notebooks/relnotes.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/1kaiser/blender-colab/blob/master/BlenderColab.ipynb)
 
-This allows you to 😎Render Blender 3.0.1 with 2.9.--- 🙂 supported scene using ☁️Google Colaboratory runtime selected as GPU.
-The blend file and rendered output frames are now hosted directly on the [GitHub Release](https://github.com/1kaiser/Blender-Colab/releases/tag/v1.0.0) — no Google Drive upload required to get started.
-This script provides basic functionality so you may modify the script to your liking to suit your needs.
+> 🥳 Thanks to the Google Colaboratory team for making cloud GPU rendering possible!  
+> [Colaboratory Release Notes](https://colab.research.google.com/notebooks/relnotes.ipynb)
 
-### Approach
-![abstract](https://user-images.githubusercontent.com/26379748/154967374-47a122f3-43e1-4bd8-92ef-51b130253567.png)
+Render Blender 3.0.1 scenes (with 2.9.x support) on a free GPU using Google Colab.  
+The blend file, rendered frames, and FLIP Fluids addon are all hosted on the
+[v1.0.0 GitHub Release](https://github.com/1kaiser/Blender-Colab/releases/tag/v1.0.0) —
+no manual Google Drive upload required to get started.
+
+---
+
+## Approach
+
+![Pipeline diagram](https://user-images.githubusercontent.com/26379748/154967374-47a122f3-43e1-4bd8-92ef-51b130253567.png)
 
 ---
 
 ## Release Downloads (v1.0.0)
 
-All assets are available at the [v1.0.0 release](https://github.com/1kaiser/Blender-Colab/releases/tag/v1.0.0):
-
 | Asset | Description | Size | Download |
 |---|---|---|---|
-| `particles.blend` | Blender 3.0.1 particle simulation scene | 12 MB | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/particles.blend) |
-| `blenderoutput_frames.zip` | 25 rendered frames (blender-0000.png → blender-0024.png) | 81 MB | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/blenderoutput_frames.zip) |
-| `flip_fluids_addon.zip` | FLIP Fluids addon for Blender | — | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/flip_fluids_addon.zip) |
+| `particles.blend` | Blender 3.0.1 particle / FLIP fluid scene | 12 MB | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/particles.blend) |
+| `blenderoutput_frames.zip` | 25 rendered frames (frame 0000–0024) | 81 MB | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/blenderoutput_frames.zip) |
+| `flip_fluids_addon.zip` | FLIP Fluids addon for Blender | — | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/flip_fluids_addon.zip) |
+| `multiview_april_sun.png` | 4-view April sun path render (combined) | — | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/multiview_april_sun.png) |
+
+---
+
+## Multi-View Render — April Sun Path
+
+The notebook includes a multi-view rendering cell that renders the scene from
+**four orthographic camera angles** with the sun placed at an **April noon** solar position:
+
+| Parameter | Value |
+|---|---|
+| Date | April 15 |
+| Latitude | 45 °N |
+| Solar elevation | 55 ° |
+| Azimuth | 180 ° (due south — noon) |
+
+### Combined view (all four in one row)
+
+![Multi-view April sun path](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/multiview_april_sun.png)
+
+### Individual views
+
+| Top View | Front View |
+|---|---|
+| ![Top](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_top.png) | ![Front](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_front.png) |
+
+| Side View | Isometric View |
+|---|---|
+| ![Side](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_side.png) | ![Isometric](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_isometric.png) |
+
+### Camera settings used
+
+| View | Location | Rotation | Ortho scale |
+|---|---|---|---|
+| Top | (0.13, 0.39, 20) | 0°, 0°, 0° | 14 |
+| Front | (0.13, scene−20, 1.27) | 90°, 0°, 0° | 8 |
+| Side | (scene+20, 0.39, 1.27) | 90°, 0°, 90° | 13 |
+| Isometric | (12, −12, 9) offset | 60°, 0°, 45° | 14 |
+
+Camera centres are derived from the actual scene mesh bounds (Z centre = 1.27).
 
 ---
 
@@ -28,94 +72,91 @@ All assets are available at the [v1.0.0 release](https://github.com/1kaiser/Blen
 
 ### Input — blend file
 
-The notebook now downloads `particles.blend` directly from the GitHub release using `wget`.
-Set `blend_file_url` in the config cell to point to your own blend file if needed:
+The notebook downloads `particles.blend` from the GitHub release via `wget`.
+Change `blend_file_url` in the config cell to use your own file:
 
 ```python
-# Default — uses the example particles.blend from the release
+# Default — example particles/FLIP fluid scene from the release
 blend_file_url = 'https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/particles.blend'
 
-# Custom — upload your file to Google Drive and use its sharing URL, or any public URL
+# Custom — upload to Google Drive and use the direct download URL
 blend_file_url = 'https://drive.google.com/uc?id=<your_file_id>&export=download'
 ```
 
 ### Output — rendered frames
 
 Rendered frames are uploaded to a Google Drive folder during execution.
-Set `output_directory_id` to your own Drive folder ID:
+Set `output_directory_id` to your Drive folder ID:
 
 ```
 https://drive.google.com/drive/folders/<your_folder_id>
                                         ↑ use this as output_directory_id
 ```
 
-A pre-rendered example output (25 frames of the particles scene) is available
-as [`blenderoutput_frames.zip`](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/blenderoutput_frames.zip).
-
 ### Output stages
 
-The render pipeline produces one PNG frame per Blender frame number:
+Each frame renders as a PNG named by frame number:
 
 ```
-blender-0000.png  →  frame 1    (~3.1 MB each)
-blender-0001.png  →  frame 2
-...
-blender-0024.png  →  frame 25
+blenderoutput/
+  blender-0000.png   (~3.1 MB, frame 1)
+  blender-0001.png
+  ...
+  blender-0024.png   (frame 25)
 ```
 
-Each frame is rendered with Cycles on GPU (CUDA/OpenCL), then uploaded
-directly to the configured Google Drive output folder via `gshell`.
+Rendered with Cycles on GPU (CUDA/OpenCL), uploaded to Google Drive via `gshell`
+after each frame batch.
 
 ### FLIP Fluids Addon
 
-Download the FLIP Fluids addon from the release and install it into Blender:
+The FLIP Fluids addon is installed automatically from the release:
 
 ```python
 addon_url = 'https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/flip_fluids_addon.zip'
 ```
 
-The notebook installs and enables it automatically via `bpy.ops.preferences.addon_install`.
+---
+
+## Existing output preview
+
+A sample frame from the rendered particle simulation:
+
+![Sample output](https://user-images.githubusercontent.com/26379748/155858106-f984d774-cc2e-4da3-a2a3-5d41ec1b6e7c.png)
 
 ---
 
 ## A few notes
 
 1. You must own a Google account for Drive output uploads.
-2. One notebook can only run for maximum time of 12 hours (24 hours for Google Colab Pro) but not guaranteed.
+2. One notebook can run for a maximum of 12 hours (24 hours with Colab Pro).
 3. EEVEE rendering is not supported in a virtual machine.
-4. This script is not tested fully yet. Expect some errors.
-5. Do note that your access to GPU may be limited or blocked if you render for many hours.
-6. This script is intended for those who have no access to high-end GPU for rendering. Please use them responsibly!
+4. Do note that GPU access may be limited or blocked after many hours of rendering.
+5. This script is intended for those without access to a high-end GPU. Please use responsibly.
 
 ---
 
 ## FAQ
 
 ### An error occurred!
-Check which section of the code failed and identify the error (such as misspelled files or path). If you don't understand the error, try re-running the code with the play button at the side. If it still fails, go to `Runtime > Restart and run all` to restart the code or try `Runtime > Factory reset runtime`. If all else fails, open an issue in GitHub with the error log you encountered attached and the details of your setup.
+Check which cell failed and identify the error. Re-run the cell with the play button, or go to `Runtime > Restart and run all`. If the issue persists, open a GitHub issue with the error log and your setup details.
 
 Common errors:
-* `MessageError: TypeError: Failed to fetch` while downloading: The tab must be opened so that the frames can be downloaded.
+- `MessageError: TypeError: Failed to fetch` while downloading — keep the Colab tab open during frame download.
 
 ---
 
 ## Credits
 
-### The "blender-colab" code skeleton (./blender-colab folder) was adapted from the [ynshung/blender-colab][1] repository.
-[1]: https://github.com/ynshung/blender-colab \
-    <a href="https://colab.research.google.com/github/ynshung/blender-colab/blob/master/blender_render.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-### The "Gshell" library was used from [wkentaro/gshell][2] repository.
-[2]: https://github.com/wkentaro/gshell
-    gshell = Google Drive + Shell >>> Navigate in Google Drive as you do on shell.
-
-### The "google-drive-to-sqlite" library was used from [simonw/google-drive-to-sqlite][3] repository.
-[3]: https://github.com/simonw/google-drive-to-sqlite
-    Create a SQLite database containing metadata from Google Drive.
-
-![Screenshot 2022-02-27 003233](https://user-images.githubusercontent.com/26379748/155858106-f984d774-cc2e-4da3-a2a3-5d41ec1b6e7c.png)
+- **blender-colab skeleton** adapted from [ynshung/blender-colab](https://github.com/ynshung/blender-colab)
+- **gshell** library from [wkentaro/gshell](https://github.com/wkentaro/gshell) — navigate Google Drive like a shell
+- **google-drive-to-sqlite** from [simonw/google-drive-to-sqlite](https://github.com/simonw/google-drive-to-sqlite) — SQLite metadata from Drive
 
 ---
 
 ## Disclaimer
-Google Colab is specialized for data centres, neural network etc, not rendering 3D scenes. Because the computing power provided are free, the usage limits, idle timeouts and speed of the rendering may vary. [ColabPro](https://colab.research.google.com/signup) is available for those who want a more powerful GPU and longer session for rendering. See the [FAQ](https://research.google.com/colaboratory/faq.html) for more info.
+
+Google Colab is optimised for data science and neural network workloads, not 3D rendering.
+Free-tier usage limits, idle timeouts, and GPU speed vary.
+[Colab Pro](https://colab.research.google.com/signup) offers longer sessions and faster GPUs.
+See the [FAQ](https://research.google.com/colaboratory/faq.html) for details.
