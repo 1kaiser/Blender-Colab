@@ -25,7 +25,7 @@ no manual Google Drive upload required to get started.
 | `particles.blend` | Blender 3.0.1 particle / FLIP fluid scene | 12 MB | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/particles.blend) |
 | `blenderoutput_frames.zip` | 25 rendered frames (frame 0000–0024) | 81 MB | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/blenderoutput_frames.zip) |
 | `flip_fluids_addon.zip` | FLIP Fluids addon for Blender | — | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/flip_fluids_addon.zip) |
-| `multiview_april_sun.png` | 4-view April sun path render (combined) | — | [⬇ Download](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/multiview_april_sun.png) |
+| `multiview_april_sun.png` | 4-view April sun path render (combined) | 823 KB | [View](https://github.com/1kaiser/Blender-Colab/blob/master/assets/multiview_april_sun.png) |
 
 ---
 
@@ -43,17 +43,17 @@ The notebook includes a multi-view rendering cell that renders the scene from
 
 ### Combined view (all four in one row)
 
-![Multi-view April sun path](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/multiview_april_sun.png)
+![Multi-view April sun path](https://raw.githubusercontent.com/1kaiser/Blender-Colab/master/assets/multiview_april_sun.png)
 
 ### Individual views
 
 | Top View | Front View |
 |---|---|
-| ![Top](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_top.png) | ![Front](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_front.png) |
+| ![Top](https://raw.githubusercontent.com/1kaiser/Blender-Colab/master/assets/view_top.png) | ![Front](https://raw.githubusercontent.com/1kaiser/Blender-Colab/master/assets/view_front.png) |
 
 | Side View | Isometric View |
 |---|---|
-| ![Side](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_side.png) | ![Isometric](https://github.com/1kaiser/Blender-Colab/releases/download/v1.0.0/view_isometric.png) |
+| ![Side](https://raw.githubusercontent.com/1kaiser/Blender-Colab/master/assets/view_side.png) | ![Isometric](https://raw.githubusercontent.com/1kaiser/Blender-Colab/master/assets/view_isometric.png) |
 
 ### Camera settings used
 
