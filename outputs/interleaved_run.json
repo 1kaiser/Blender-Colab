@@ -1,0 +1,200 @@
+{
+  "mode": "interleaved",
+  "blender_bin": "/content/work/blender-5.3.0/blender",
+  "source_blend": "/content/work/particles.blend",
+  "sanitize": {
+    "action": "sanitize",
+    "source_blend": "/content/work/particles_sanitized.blend",
+    "sanitized_blend": "/content/work/particles_sanitized.blend",
+    "reactivated_objects": [
+      "culverts array->TYPE_OBSTACLE",
+      "inlet->TYPE_INFLOW",
+      "outlet->TYPE_OUTFLOW",
+      "water boundary->TYPE_DOMAIN"
+    ],
+    "scene_config": {
+      "frame_start": 1,
+      "frame_end": 25,
+      "cache_directory": "/content/work/flip_fluid_cache",
+      "resolution": 192
+    },
+    "materials": {
+      "repaired": [
+        "Water (upgraded-bare-transparent->water)",
+        "dprops.materials.surface_material=Water",
+        "dprops.materials.whitewater_foam_material=FF Foam",
+        "dprops.materials.whitewater_bubble_material=FF Bubble",
+        "dprops.materials.whitewater_spray_material=FF Spray",
+        "dprops.materials.whitewater_dust_material=FF Dust"
+      ],
+      "preserved_count": 3,
+      "removed_missing_libraries": []
+    }
+  },
+  "working_blend": "/content/work/particles_sanitized.blend",
+  "interleaved": {
+    "mode": "interleaved",
+    "wall_s": 404.2786,
+    "bake_wall_s": 229.3657,
+    "bake_returncode": 0,
+    "render_returncode": 0
+  },
+  "bake": {
+    "action": "bake",
+    "wall_s": 228.2293,
+    "cache_directory": "/content/work/flip_fluid_cache",
+    "finished_count": 25,
+    "scene_config": {
+      "frame_start": 1,
+      "frame_end": 25,
+      "cache_directory": "/content/work/flip_fluid_cache",
+      "resolution": 192
+    }
+  },
+  "render": {
+    "action": "render_interleaved",
+    "start_frame": 1,
+    "end_frame": 25,
+    "rendered_count": 25,
+    "skipped_count": 0,
+    "missing_frames": [],
+    "bake_returncode": null,
+    "wall_s": 402.9297,
+    "frames": [
+      {
+        "frame": 1,
+        "wall_s": 3.5237,
+        "path": "/content/work/frames/frame_000001.png"
+      },
+      {
+        "frame": 2,
+        "wall_s": 3.1785,
+        "path": "/content/work/frames/frame_000002.png"
+      },
+      {
+        "frame": 3,
+        "wall_s": 4.2593,
+        "path": "/content/work/frames/frame_000003.png"
+      },
+      {
+        "frame": 4,
+        "wall_s": 6.2333,
+        "path": "/content/work/frames/frame_000004.png"
+      },
+      {
+        "frame": 5,
+        "wall_s": 8.8287,
+        "path": "/content/work/frames/frame_000005.png"
+      },
+      {
+        "frame": 6,
+        "wall_s": 11.2186,
+        "path": "/content/work/frames/frame_000006.png"
+      },
+      {
+        "frame": 7,
+        "wall_s": 13.1078,
+        "path": "/content/work/frames/frame_000007.png"
+      },
+      {
+        "frame": 8,
+        "wall_s": 14.9185,
+        "path": "/content/work/frames/frame_000008.png"
+      },
+      {
+        "frame": 9,
+        "wall_s": 16.4933,
+        "path": "/content/work/frames/frame_000009.png"
+      },
+      {
+        "frame": 10,
+        "wall_s": 17.7196,
+        "path": "/content/work/frames/frame_000010.png"
+      },
+      {
+        "frame": 11,
+        "wall_s": 18.7544,
+        "path": "/content/work/frames/frame_000011.png"
+      },
+      {
+        "frame": 12,
+        "wall_s": 19.2511,
+        "path": "/content/work/frames/frame_000012.png"
+      },
+      {
+        "frame": 13,
+        "wall_s": 19.5996,
+        "path": "/content/work/frames/frame_000013.png"
+      },
+      {
+        "frame": 14,
+        "wall_s": 19.8881,
+        "path": "/content/work/frames/frame_000014.png"
+      },
+      {
+        "frame": 15,
+        "wall_s": 20.5475,
+        "path": "/content/work/frames/frame_000015.png"
+      },
+      {
+        "frame": 16,
+        "wall_s": 20.5834,
+        "path": "/content/work/frames/frame_000016.png"
+      },
+      {
+        "frame": 17,
+        "wall_s": 19.5629,
+        "path": "/content/work/frames/frame_000017.png"
+      },
+      {
+        "frame": 18,
+        "wall_s": 19.1688,
+        "path": "/content/work/frames/frame_000018.png"
+      },
+      {
+        "frame": 19,
+        "wall_s": 19.5837,
+        "path": "/content/work/frames/frame_000019.png"
+      },
+      {
+        "frame": 20,
+        "wall_s": 19.916,
+        "path": "/content/work/frames/frame_000020.png"
+      },
+      {
+        "frame": 21,
+        "wall_s": 20.0036,
+        "path": "/content/work/frames/frame_000021.png"
+      },
+      {
+        "frame": 22,
+        "wall_s": 20.2633,
+        "path": "/content/work/frames/frame_000022.png"
+      },
+      {
+        "frame": 23,
+        "wall_s": 20.5607,
+        "path": "/content/work/frames/frame_000023.png"
+      },
+      {
+        "frame": 24,
+        "wall_s": 20.9362,
+        "path": "/content/work/frames/frame_000024.png"
+      },
+      {
+        "frame": 25,
+        "wall_s": 21.3058,
+        "path": "/content/work/frames/frame_000025.png"
+      }
+    ]
+  },
+  "video": {
+    "assembled": true,
+    "frame_count": 25,
+    "mp4_path": "/content/work/frames/animation.mp4",
+    "mp4_bytes": 2687930,
+    "gif_path": "/content/work/frames/animation_preview.gif",
+    "gif_bytes": 826769
+  },
+  "wall_s": 418.84
+}

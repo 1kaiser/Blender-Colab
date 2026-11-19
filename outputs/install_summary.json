@@ -1,0 +1,41 @@
+{
+  "blender_version": [
+    5,
+    3,
+    0
+  ],
+  "blender_version_string": "5.3.0",
+  "blender_binary": "/content/work/blender-5.3.0/blender",
+  "enabled_module": "bl_ext.user_default.flip_fluids_addon",
+  "all_enabled_flip_modules": [
+    "bl_ext.user_default.flip_fluids_addon"
+  ],
+  "bl_info_name": "FLIP Fluids",
+  "bl_info_version": [
+    1,
+    8,
+    9
+  ],
+  "bl_info_description": "FLIP Fluid Simulation Tool for Blender (v1.8.9)",
+  "support_license": "Source 706YX",
+  "installation_complete": true,
+  "installation_complete_file": "/root/.config/blender/5.3/extensions/user_default/flip_fluids_addon/resources/installation_data/installation_complete",
+  "installation_complete_file_exists": true,
+  "libffengine_path": "/root/.config/blender/5.3/extensions/user_default/flip_fluids_addon/ffengine/lib/libffengine.so",
+  "libffengine_version": [
+    1,
+    8,
+    9
+  ],
+  "load_post_registered": true,
+  "compiler_info": [
+    "Linux 6.6.159+ /usr/bin/c++ GNU 13.3.0 1 2026-11-19 16:50:38 +0000"
+  ],
+  "library_list": [
+    "libffengine.so <2026-11-19 16:51:09 UTC>"
+  ],
+  "addon_source": "build_from_source",
+  "addon_zip": "/content/work/addons/flip_fluids_addon_1.8.9_linux_x64_ext.zip",
+  "blender_bin_requested": "/content/work/blender-5.3.0/blender",
+  "symlink": "/usr/local/bin/blender"
+}

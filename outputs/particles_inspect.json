@@ -1,0 +1,4290 @@
+{
+  "blender": {
+    "version": [
+      5,
+      3,
+      0
+    ],
+    "version_string": "5.3.0",
+    "blend_filepath": "/content/work/particles.blend",
+    "blend_file_version": [
+      3,
+      0,
+      42
+    ]
+  },
+  "flip_fluids_addon": {
+    "enabled": true,
+    "module_name": "bl_ext.user_default.flip_fluids_addon",
+    "enabled_modules": [
+      "bl_ext.user_default.flip_fluids_addon"
+    ],
+    "installed_modules_found": [
+      "bl_ext.user_default.flip_fluids_addon"
+    ],
+    "bl_info_name": "FLIP Fluids",
+    "bl_info_version": [
+      1,
+      8,
+      9
+    ],
+    "bl_info_description": "FLIP Fluid Simulation Tool for Blender (v1.8.9)",
+    "installation_complete": true,
+    "support_license": "Source 326GJ",
+    "is_addon_active_in_scene": false,
+    "manifest": {
+      "id": "flip_fluids_addon",
+      "version": "1.8.9",
+      "name": "FLIP Fluids",
+      "tagline": "FLIP Fluid Simulation Tool for Blender (v1.8.9)",
+      "blender_version_min": "4.5.0"
+    }
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "resolution_percentage": 100,
+    "fps": 24,
+    "fps_base": 1.0,
+    "frame_start": 1,
+    "frame_end": 250,
+    "frame_step": 1,
+    "frame_current": 91,
+    "filepath": "/tmp/",
+    "file_format": "PNG",
+    "use_persistent_data": false,
+    "cycles": {
+      "device": "GPU",
+      "samples": 128,
+      "preview_samples": 128,
+      "use_adaptive_sampling": true,
+      "adaptive_threshold": 0.0010000000474974513,
+      "use_denoising": true,
+      "denoiser": "OPENIMAGEDENOISE",
+      "denoising_input_passes": "RGB_ALBEDO_NORMAL",
+      "max_bounces": 12,
+      "diffuse_bounces": 4,
+      "glossy_bounces": 4,
+      "transmission_bounces": 12,
+      "transparent_max_bounces": 8,
+      "volume_bounces": 0,
+      "use_texture_cache": null
+    },
+    "color_management": {
+      "display_device": "sRGB",
+      "view_transform": "Filmic",
+      "look": "None",
+      "exposure": 0.0,
+      "gamma": 1.0
+    }
+  },
+  "active_camera": {
+    "name": "Camera",
+    "location": [
+      9.968903,
+      1.22602,
+      6.759417
+    ],
+    "rotation_euler_rad": [
+      1.114166,
+      -0.0,
+      0.390012
+    ],
+    "rotation_euler_deg": [
+      63.837,
+      -0.0,
+      22.346
+    ],
+    "type": "PERSP",
+    "lens": 50.0,
+    "ortho_scale": 6.0,
+    "sensor_width": 36.0,
+    "clip_start": 0.10000000149011612,
+    "clip_end": 1000.0
+  },
+  "all_cameras": [
+    {
+      "name": "Camera",
+      "location": [
+        9.968903,
+        1.22602,
+        6.759417
+      ],
+      "rotation_euler_rad": [
+        1.114166,
+        -0.0,
+        0.390012
+      ],
+      "rotation_euler_deg": [
+        63.837,
+        -0.0,
+        22.346
+      ],
+      "type": "PERSP",
+      "lens": 50.0,
+      "ortho_scale": 6.0,
+      "sensor_width": 36.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 1000.0
+    }
+  ],
+  "lights": [
+    {
+      "name": "Point",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -0.201804,
+        0.757876,
+        5.076008
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.001",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        1.593386,
+        0.28536,
+        7.070029
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.002",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -2.670835,
+        0.793125,
+        -6.046779
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.003",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -3.888346,
+        9.994353,
+        -5.380291
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.004",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -3.259433,
+        -4.933514,
+        -5.72457
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.005",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -5.276181,
+        0.761356,
+        5.808121
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.006",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -4.94077,
+        9.962585,
+        6.324639
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.007",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -6.172277,
+        -6.941569,
+        4.428168
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.008",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        0.515295,
+        -0.870634,
+        -6.146161
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.009",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        1.623777,
+        9.994353,
+        -5.310812
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.010",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        1.051184,
+        -4.933514,
+        -5.742317
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.011",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        0.488596,
+        0.812447,
+        6.455257
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.012",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        0.099356,
+        9.984339,
+        5.57959
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.013",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        1.551742,
+        -6.998341,
+        6.294054
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.014",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -5.743685,
+        2.176931,
+        -3.58126
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.015",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -6.657397,
+        9.962585,
+        -2.536431
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.016",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        -6.185413,
+        -6.941569,
+        -3.076144
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.017",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        3.736737,
+        0.761357,
+        -1.864247
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.2332,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.018",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        3.353339,
+        10.054506,
+        1.469244
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        43.0346,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "Point.019",
+      "light_type": "POINT",
+      "energy": 2000.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "angle_deg": null,
+      "size": null,
+      "shadow_soft_size": 0.25,
+      "location": [
+        3.300853,
+        -6.941569,
+        -3.175953
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.2332,
+        0.0
+      ],
+      "hide_viewport": false,
+      "hide_render": false
+    }
+  ],
+  "world": {
+    "name": "World",
+    "has_node_tree": true,
+    "nodes": [
+      {
+        "name": "World Output",
+        "type": "OUTPUT_WORLD",
+        "bl_idname": "ShaderNodeOutputWorld"
+      },
+      {
+        "name": "Background",
+        "type": "BACKGROUND",
+        "bl_idname": "ShaderNodeBackground",
+        "color": [
+          0.0273,
+          0.0509,
+          0.0152,
+          1.0
+        ],
+        "strength": 78.39999389648438
+      }
+    ]
+  },
+  "world_bbox": {
+    "meshes_only": {
+      "min": [
+        -3.366709,
+        -5.23128,
+        0.685973
+      ],
+      "max": [
+        3.630235,
+        6.012827,
+        1.835973
+      ],
+      "center": [
+        0.131763,
+        0.390773,
+        1.260973
+      ],
+      "size": [
+        6.996944,
+        11.244107,
+        1.15
+      ],
+      "object_count": 5,
+      "included_objects": [
+        "culverts array",
+        "water boundary",
+        "outlet",
+        "inlet",
+        "fluid_surface"
+      ]
+    },
+    "meshes_renderable_excluding_domain": {
+      "min": [
+        -3.366709,
+        -5.23128,
+        0.685973
+      ],
+      "max": [
+        3.630235,
+        6.012827,
+        1.835973
+      ],
+      "center": [
+        0.131763,
+        0.390773,
+        1.260973
+      ],
+      "size": [
+        6.996944,
+        11.244107,
+        1.15
+      ],
+      "object_count": 5,
+      "included_objects": [
+        "culverts array",
+        "water boundary",
+        "outlet",
+        "inlet",
+        "fluid_surface"
+      ]
+    },
+    "all_objects": {
+      "min": [
+        -20.219362,
+        -20.219362,
+        -6.146161
+      ],
+      "max": [
+        20.219362,
+        20.219362,
+        16.930174
+      ],
+      "center": [
+        0.0,
+        0.0,
+        5.392007
+      ],
+      "size": [
+        40.438724,
+        40.438724,
+        23.076335
+      ],
+      "object_count": 31,
+      "included_objects": [
+        "Component1",
+        "Component1.001",
+        "Component1.002",
+        "Camera",
+        "culverts array",
+        "water boundary",
+        "outlet",
+        "inlet",
+        "fluid_surface",
+        "Point",
+        "Point.001",
+        "Point.002",
+        "Point.003",
+        "Point.004",
+        "Point.005",
+        "Point.006",
+        "Point.007",
+        "Point.008",
+        "Point.009",
+        "Point.010",
+        "Point.011",
+        "Point.012",
+        "Point.013",
+        "Point.014",
+        "Point.015",
+        "Point.016",
+        "Point.017",
+        "Point.018",
+        "Point.019",
+        "BezierCircle",
+        "Empty"
+      ]
+    }
+  },
+  "object_counts": {
+    "scene_objects": 31,
+    "data_objects": 31
+  },
+  "objects": [
+    {
+      "name": "Component1",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Component1.001",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "max": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "center": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Component1.002",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "max": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Camera",
+      "type": "CAMERA",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        9.968903,
+        1.22602,
+        6.759417
+      ],
+      "rotation_euler_deg": [
+        63.837,
+        -0.0,
+        22.346
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.896054,
+          -9.266527,
+          6.759417
+        ],
+        "max": [
+          3.896054,
+          -9.266527,
+          6.759417
+        ],
+        "center": [
+          3.896054,
+          -9.266527,
+          6.759417
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "culverts array",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -0.788,
+        0.0,
+        0.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        2.355674,
+        6.729831,
+        2.402581
+      ],
+      "dimensions": [
+        3.0,
+        9.999999,
+        1.15
+      ],
+      "vertex_count": 2918,
+      "polygon_count": 5857,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [
+        {
+          "name": "Fluid",
+          "type": "FLUID",
+          "fluid_type": "EFFECTOR"
+        }
+      ],
+      "materials": [
+        "Material"
+      ],
+      "world_bbox": {
+        "min": [
+          -2.381846,
+          -4.631641,
+          0.685973
+        ],
+        "max": [
+          0.618154,
+          5.368358,
+          1.835973
+        ],
+        "center": [
+          -0.881846,
+          0.368358,
+          1.260973
+        ],
+        "size": [
+          3.0,
+          9.999999,
+          1.15
+        ]
+      }
+    },
+    {
+      "name": "water boundary",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "SOLID",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        3.997737,
+        6.729831,
+        2.402581
+      ],
+      "dimensions": [
+        6.97195,
+        11.244106,
+        0.94317
+      ],
+      "vertex_count": 1153,
+      "polygon_count": 2318,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [
+        {
+          "name": "Fluid",
+          "type": "FLUID",
+          "fluid_type": "DOMAIN"
+        },
+        {
+          "name": "Liquid Particle System",
+          "type": "PARTICLE_SYSTEM",
+          "fluid_type": null
+        }
+      ],
+      "materials": [
+        "Water.001"
+      ],
+      "world_bbox": {
+        "min": [
+          -3.366709,
+          -5.231279,
+          0.835973
+        ],
+        "max": [
+          3.605241,
+          6.012827,
+          1.779143
+        ],
+        "center": [
+          0.119266,
+          0.390774,
+          1.307558
+        ],
+        "size": [
+          6.97195,
+          11.244106,
+          0.94317
+        ]
+      }
+    },
+    {
+      "name": "outlet",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        3.833081,
+        0.294145,
+        1.176581
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.435892,
+        6.068363,
+        1.0
+      ],
+      "dimensions": [
+        0.208053,
+        11.244106,
+        0.94317
+      ],
+      "vertex_count": 46,
+      "polygon_count": 45,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [
+        {
+          "name": "Fluid",
+          "type": "FLUID",
+          "fluid_type": "FLOW"
+        }
+      ],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.397188,
+          -5.23128,
+          0.835973
+        ],
+        "max": [
+          3.605241,
+          6.012826,
+          1.779143
+        ],
+        "center": [
+          3.501214,
+          0.390773,
+          1.307558
+        ],
+        "size": [
+          0.208053,
+          11.244106,
+          0.94317
+        ]
+      }
+    },
+    {
+      "name": "inlet",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -2.8863,
+        6.710189,
+        1.158197
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.770141,
+        0.302638,
+        0.602889
+      ],
+      "vertex_count": 10,
+      "polygon_count": 9,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [
+        {
+          "name": "Fluid",
+          "type": "FLUID",
+          "fluid_type": "FLOW"
+        }
+      ],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -3.366709,
+          5.710189,
+          0.835973
+        ],
+        "max": [
+          -2.596568,
+          6.012827,
+          1.438862
+        ],
+        "center": [
+          -2.981638,
+          5.861508,
+          1.137417
+        ],
+        "size": [
+          0.770141,
+          0.302638,
+          0.602889
+        ]
+      }
+    },
+    {
+      "name": "fluid_surface",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -3.366709,
+        -5.231279,
+        0.835973
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        6.994285,
+        11.238256,
+        0.991123
+      ],
+      "vertex_count": 77780,
+      "polygon_count": 152952,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [
+        {
+          "name": "Smooth",
+          "type": "SMOOTH",
+          "fluid_type": null
+        }
+      ],
+      "materials": [
+        "Water"
+      ],
+      "world_bbox": {
+        "min": [
+          -3.364049,
+          -5.227985,
+          0.838407
+        ],
+        "max": [
+          3.630235,
+          6.010271,
+          1.82953
+        ],
+        "center": [
+          0.133093,
+          0.391143,
+          1.333969
+        ],
+        "size": [
+          6.994284,
+          11.238256,
+          0.991123
+        ]
+      }
+    },
+    {
+      "name": "Point",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -0.201804,
+        0.757876,
+        5.076008
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -0.201804,
+          0.757876,
+          5.076008
+        ],
+        "max": [
+          -0.201804,
+          0.757876,
+          5.076008
+        ],
+        "center": [
+          -0.201804,
+          0.757876,
+          5.076008
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.001",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        1.593386,
+        0.28536,
+        7.070029
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          1.593386,
+          0.28536,
+          7.070029
+        ],
+        "max": [
+          1.593386,
+          0.28536,
+          7.070029
+        ],
+        "center": [
+          1.593386,
+          0.28536,
+          7.070029
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.002",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -2.670835,
+        0.793125,
+        -6.046779
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -2.670835,
+          0.793125,
+          -6.046779
+        ],
+        "max": [
+          -2.670835,
+          0.793125,
+          -6.046779
+        ],
+        "center": [
+          -2.670835,
+          0.793125,
+          -6.046779
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.003",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -3.888346,
+        9.994353,
+        -5.380291
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -3.888346,
+          9.994353,
+          -5.380291
+        ],
+        "max": [
+          -3.888346,
+          9.994353,
+          -5.380291
+        ],
+        "center": [
+          -3.888346,
+          9.994353,
+          -5.380291
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.004",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -3.259433,
+        -4.933514,
+        -5.72457
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -61.3029,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -3.259433,
+          -4.933514,
+          -5.72457
+        ],
+        "max": [
+          -3.259433,
+          -4.933514,
+          -5.72457
+        ],
+        "center": [
+          -3.259433,
+          -4.933514,
+          -5.72457
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.005",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -5.276181,
+        0.761356,
+        5.808121
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -5.276181,
+          0.761356,
+          5.808121
+        ],
+        "max": [
+          -5.276181,
+          0.761356,
+          5.808121
+        ],
+        "center": [
+          -5.276181,
+          0.761356,
+          5.808121
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.006",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -4.94077,
+        9.962585,
+        6.324639
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -4.94077,
+          9.962585,
+          6.324639
+        ],
+        "max": [
+          -4.94077,
+          9.962585,
+          6.324639
+        ],
+        "center": [
+          -4.94077,
+          9.962585,
+          6.324639
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.007",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -6.172277,
+        -6.941569,
+        4.428168
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -6.172277,
+          -6.941569,
+          4.428168
+        ],
+        "max": [
+          -6.172277,
+          -6.941569,
+          4.428168
+        ],
+        "center": [
+          -6.172277,
+          -6.941569,
+          4.428168
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.008",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.515295,
+        -0.870634,
+        -6.146161
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.515295,
+          -0.870634,
+          -6.146161
+        ],
+        "max": [
+          0.515295,
+          -0.870634,
+          -6.146161
+        ],
+        "center": [
+          0.515295,
+          -0.870634,
+          -6.146161
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.009",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        1.623777,
+        9.994353,
+        -5.310812
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          1.623777,
+          9.994353,
+          -5.310812
+        ],
+        "max": [
+          1.623777,
+          9.994353,
+          -5.310812
+        ],
+        "center": [
+          1.623777,
+          9.994353,
+          -5.310812
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.010",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        1.051184,
+        -4.933514,
+        -5.742317
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        52.9984,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          1.051184,
+          -4.933514,
+          -5.742317
+        ],
+        "max": [
+          1.051184,
+          -4.933514,
+          -5.742317
+        ],
+        "center": [
+          1.051184,
+          -4.933514,
+          -5.742317
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.011",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.488596,
+        0.812447,
+        6.455257
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.488596,
+          0.812447,
+          6.455257
+        ],
+        "max": [
+          0.488596,
+          0.812447,
+          6.455257
+        ],
+        "center": [
+          0.488596,
+          0.812447,
+          6.455257
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.012",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.099356,
+        9.984339,
+        5.57959
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          0.099356,
+          9.984339,
+          5.57959
+        ],
+        "max": [
+          0.099356,
+          9.984339,
+          5.57959
+        ],
+        "center": [
+          0.099356,
+          9.984339,
+          5.57959
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.013",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        1.551742,
+        -6.998341,
+        6.294054
+      ],
+      "rotation_euler_deg": [
+        -10.8176,
+        -38.697,
+        6.8124
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          1.551742,
+          -6.998341,
+          6.294054
+        ],
+        "max": [
+          1.551742,
+          -6.998341,
+          6.294054
+        ],
+        "center": [
+          1.551742,
+          -6.998341,
+          6.294054
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.014",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -5.743685,
+        2.176931,
+        -3.58126
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -5.743685,
+          2.176931,
+          -3.58126
+        ],
+        "max": [
+          -5.743685,
+          2.176931,
+          -3.58126
+        ],
+        "center": [
+          -5.743685,
+          2.176931,
+          -3.58126
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.015",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -6.657397,
+        9.962585,
+        -2.536431
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -6.657397,
+          9.962585,
+          -2.536431
+        ],
+        "max": [
+          -6.657397,
+          9.962585,
+          -2.536431
+        ],
+        "center": [
+          -6.657397,
+          9.962585,
+          -2.536431
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.016",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        -6.185413,
+        -6.941569,
+        -3.076144
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        -41.17,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -6.185413,
+          -6.941569,
+          -3.076144
+        ],
+        "max": [
+          -6.185413,
+          -6.941569,
+          -3.076144
+        ],
+        "center": [
+          -6.185413,
+          -6.941569,
+          -3.076144
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.017",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        3.736737,
+        0.761357,
+        -1.864247
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.2332,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.736737,
+          0.761357,
+          -1.864247
+        ],
+        "max": [
+          3.736737,
+          0.761357,
+          -1.864247
+        ],
+        "center": [
+          3.736737,
+          0.761357,
+          -1.864247
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.018",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        3.353339,
+        10.054506,
+        1.469244
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        43.0346,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.353339,
+          10.054506,
+          1.469244
+        ],
+        "max": [
+          3.353339,
+          10.054506,
+          1.469244
+        ],
+        "center": [
+          3.353339,
+          10.054506,
+          1.469244
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "Point.019",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        3.300853,
+        -6.941569,
+        -3.175953
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        32.2332,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.300853,
+          -6.941569,
+          -3.175953
+        ],
+        "max": [
+          3.300853,
+          -6.941569,
+          -3.175953
+        ],
+        "center": [
+          3.300853,
+          -6.941569,
+          -3.175953
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "BezierCircle",
+      "type": "CURVE",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.0,
+        0.0,
+        6.820493
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        10.109681,
+        10.109681,
+        10.109681
+      ],
+      "dimensions": [
+        20.219362,
+        20.219362,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          -20.219362,
+          -20.219362,
+          -3.289188
+        ],
+        "max": [
+          20.219362,
+          20.219362,
+          16.930174
+        ],
+        "center": [
+          0.0,
+          0.0,
+          6.820493
+        ],
+        "size": [
+          40.438724,
+          40.438724,
+          20.219362
+        ]
+      }
+    },
+    {
+      "name": "Empty",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false,
+      "display_type": "TEXTURED",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 0,
+      "polygon_count": 0,
+      "is_empty_mesh": false,
+      "flip_fluid_type": "TYPE_NONE",
+      "has_raw_flip_fluid_idprop": true,
+      "modifiers": [],
+      "materials": [],
+      "world_bbox": {
+        "min": [
+          3.890672,
+          -9.330201,
+          6.820493
+        ],
+        "max": [
+          3.890672,
+          -9.330201,
+          6.820493
+        ],
+        "center": [
+          3.890672,
+          -9.330201,
+          6.820493
+        ],
+        "size": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "flip_fluids_scene": {
+    "available": true,
+    "has_domain": false,
+    "domain_object_name": null,
+    "num_domain_objects": 0,
+    "domain_properties": null,
+    "fluids": [],
+    "inflows": [],
+    "obstacles": [],
+    "outflows": [],
+    "force_fields": [],
+    "cache_objects": [
+      {
+        "name": "fluid_surface",
+        "in_scene": true,
+        "hide_render": false,
+        "materials": [
+          "Water"
+        ],
+        "modifiers": [
+          "SMOOTH"
+        ]
+      }
+    ],
+    "inactive_flip_objects": [
+      {
+        "name": "Component1",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Component1.001",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Component1.002",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Camera",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "culverts array",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {
+          "is_active": 0,
+          "object_type": 0,
+          "saved_view_settings": {
+            "hide_render": 0,
+            "show_name": 0,
+            "draw_type": "TEXTURED"
+          },
+          "is_view_settings_saved": 0,
+          "obstacle": {
+            "property_registry": {
+              "properties": [
+                {
+                  "path": "obstacle.is_enabled",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.is_inversed",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.export_animated_mesh",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.skip_reexport",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.force_reexport_on_next_bake",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.friction",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.whitewater_influence",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.dust_emission_strength",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.sheeting_strength",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "obstacle.mesh_expansion",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                }
+              ]
+            },
+            "friction": 0.13001911342144012,
+            "export_animated_mesh": 0,
+            "skip_reexport": 0,
+            "force_reexport_on_next_bake": 0
+          }
+        }
+      },
+      {
+        "name": "water boundary",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {
+          "is_active": 0,
+          "object_type": 0,
+          "saved_view_settings": {
+            "hide_render": 0,
+            "show_name": 0,
+            "draw_type": "SOLID"
+          },
+          "is_view_settings_saved": 0,
+          "domain": {
+            "simulation": {
+              "frame_rate_custom": 24.0,
+              "resolution": 384,
+              "preview_resolution": 192,
+              "current_isize": 239,
+              "current_jsize": 384,
+              "current_ksize": 33,
+              "current_dx": 0.029281526803970337,
+              "more_bake_settings_expanded": 1,
+              "skip_mesh_reexport_expanded": 0,
+              "frame_start": 1,
+              "frame_end": 250,
+              "frame_range_custom": {},
+              "selected_savestate": 4,
+              "selected_savestate_int": 159,
+              "last_selected_savestate_int": 159,
+              "selected_savestate_int_label": "(most recent)",
+              "savestate_isize": 167,
+              "savestate_jsize": 268,
+              "savestate_ksize": 23,
+              "savestate_dx": 0.0419556200504303
+            },
+            "cache": {
+              "cache_directory": "//culvert array_flip_fluid_cache",
+              "is_cache_directory_set": 1,
+              "logfile_name": "culvert array.004.txt"
+            },
+            "stats": {
+              "is_cache_info_available": 1,
+              "estimated_frame_speed": 0.03594724088907242,
+              "is_estimated_time_remaining_available": 1,
+              "is_stats_current": 1,
+              "num_cache_frames": 158,
+              "display_frame_viscosity_timing_stats": 0,
+              "display_frame_diffuse_timing_stats": 0,
+              "cache_bytes": {
+                "bytes": 1005555.0976
+              },
+              "estimated_time_remaining": 2560,
+              "estimated_time_remaining_timestamp": 1645765394,
+              "surface_mesh": {
+                "enabled": 1,
+                "bytes": {
+                  "bytes": 964470.8864
+                }
+              },
+              "preview_mesh": {
+                "enabled": 1,
+                "bytes": {
+                  "bytes": 41084.1952
+                }
+              },
+              "surfaceblur_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "surfacevelocity_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "surfacespeed_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "surfaceage_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "surfacecolor_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "surfacesourceid_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "foam_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "bubble_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "spray_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "dust_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "foamblur_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "bubbleblur_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "sprayblur_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "dustblur_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "particle_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "obstacle_mesh": {
+                "enabled": 0,
+                "bytes": {
+                  "bytes": 0.0
+                }
+              },
+              "time_mesh": {
+                "time": 445.5977783203125,
+                "pct": 11.090074826370865
+              },
+              "time_advection": {
+                "time": 954.979736328125,
+                "pct": 23.76761590297856
+              },
+              "time_particles": {
+                "time": 610.19775390625,
+                "pct": 15.186653283750456
+              },
+              "time_pressure": {
+                "time": 1749.839111328125,
+                "pct": 43.55014241149014
+              },
+              "time_diffuse": {
+                "time": 0.0,
+                "pct": 0.0
+              },
+              "time_viscosity": {
+                "time": 0.0,
+                "pct": 0.0
+              },
+              "time_objects": {
+                "time": 160.64833068847656,
+                "pct": 3.99822925286432
+              },
+              "time_other": {
+                "time": 96.72437286376953,
+                "pct": 2.4072843225456504
+              }
+            },
+            "bake": {
+              "is_autosave_available": 1,
+              "is_simulation_running": 0,
+              "bake_progress": 0.6320000290870667,
+              "num_baked_frames": 158,
+              "is_export_operator_cancelled": 1,
+              "is_export_operator_running": 0,
+              "export_progress": 1.0,
+              "export_stage": "STATIC",
+              "is_bake_cancelled": 0,
+              "export_filepath": "C:\\Users\\schlb\\Documents\\work folder\\blender works\\culvert array_flip_fluid_cache\\export\\flipdata.sim",
+              "export_success": 1,
+              "is_bake_initialized": 1,
+              "is_safe_to_exit": 1,
+              "autosave_frame_id": 157,
+              "autosave_frame": 158,
+              "is_autosave_last_frame": 0,
+              "original_frame_start": 1
+            },
+            "advanced": {
+              "num_threads_auto_detect": 16,
+              "min_max_time_steps_per_frame": {}
+            },
+            "materials": {
+              "surface_material": 433701,
+              "last_surface_material": "Water",
+              "whitewater_foam_material": 0,
+              "last_whitewater_foam_material": "MATERIAL_NONE",
+              "whitewater_bubble_material": 0,
+              "last_whitewater_bubble_material": "MATERIAL_NONE",
+              "whitewater_spray_material": 0,
+              "last_whitewater_spray_material": "MATERIAL_NONE",
+              "whitewater_dust_material": 0,
+              "last_whitewater_dust_material": "MATERIAL_NONE",
+              "material_import": 0
+            },
+            "render": {
+              "hold_frame_number": 156,
+              "current_frame": 156,
+              "whitewater_viewport_display": 1,
+              "viewport_display": 1,
+              "is_hold_frame_number_set": 0,
+              "render_display": 0,
+              "whitewater_render_display": 0,
+              "render_surface_motion_blur": 1,
+              "override_frame": 1.0,
+              "whitewater_view_settings_mode": 0,
+              "render_whitewater_pct": 100,
+              "viewport_whitewater_pct": 5,
+              "render_foam_pct": 100,
+              "render_bubble_pct": 100,
+              "render_spray_pct": 100,
+              "render_dust_pct": 100,
+              "viewport_foam_pct": 5,
+              "viewport_bubble_pct": 5,
+              "viewport_spray_pct": 5,
+              "viewport_dust_pct": 5,
+              "whitewater_particle_object_settings_mode": 0,
+              "whitewater_particle_object_mode": 0,
+              "only_display_whitewater_in_render": 1,
+              "whitewater_particle_scale": 0.00800000037997961,
+              "foam_particle_object_mode": 0,
+              "bubble_particle_object_mode": 0,
+              "spray_particle_object_mode": 0,
+              "dust_particle_object_mode": 0,
+              "only_display_foam_in_render": 1,
+              "only_display_bubble_in_render": 1,
+              "only_display_spray_in_render": 1,
+              "only_display_dust_in_render": 1,
+              "foam_particle_scale": 0.00800000037997961,
+              "bubble_particle_scale": 0.00800000037997961,
+              "spray_particle_scale": 0.00800000037997961,
+              "dust_particle_scale": 0.00800000037997961
+            },
+            "surface": {
+              "meshing_volume_object": {},
+              "compute_chunks_auto": 2
+            },
+            "world": {
+              "minimum_surface_tension_substeps": 2,
+              "world_scale_absolute": 11.24410629272461
+            },
+            "debug": {
+              "display_simulation_grid": 1,
+              "is_draw_debug_grid_operator_running": 1,
+              "version_history": [
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 0, 9)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.0.9 Stable 26-NOV-2020)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 0, 9)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.0.9 Stable 26-NOV-2020)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 0, 9)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.0.9 Stable 26-NOV-2020)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                },
+                {
+                  "blender_version": "3.0.0",
+                  "flip_fluids_version": "(1, 2, 0)",
+                  "flip_fluids_label": "A FLIP Fluid Simulation Tool for Blender (v1.2.0 Stable 25-NOV-2021)",
+                  "operating_system": "Windows"
+                }
+              ]
+            },
+            "mesh_cache": {
+              "surface": {
+                "cache_object": "<bpy_struct, Object(\"fluid_surface\") at 0x7ab4f7ceab20>",
+                "mesh_prefix": "preview",
+                "mesh_file_extension": "bobj",
+                "cache_object_default_name": "fluid_surface",
+                "import_function_name": "import_bobj",
+                "cache_object_type": "CACHE_OBJECT_TYPE_SURFACE",
+                "mesh_display_name_prefix": "preview_",
+                "enable_motion_blur": 0,
+                "motion_blur_scale": 1.0,
+                "loaded_frame_data": {
+                  "mesh_prefix": "preview",
+                  "enable_motion_blur": 0,
+                  "motion_blur_scale": 1.0,
+                  "enable_velocity_attribute": 0,
+                  "enable_speed_attribute": 0,
+                  "enable_age_attribute": 0,
+                  "enable_color_attribute": 0,
+                  "enable_source_id_attribute": 0,
+                  "wwp_import_percentage": 100,
+                  "is_rendering": 0,
+                  "frame": 156
+                },
+                "bounds": {
+                  "x": -3.366708993911743,
+                  "y": -5.231279373168945,
+                  "z": 0.8359730839729309,
+                  "width": 7.006588459014893,
+                  "height": 11.24410629272461,
+                  "depth": 0.9649792909622192,
+                  "dx": 0.0419556200504303,
+                  "is_set": 0,
+                  "isize": 167,
+                  "jsize": 268,
+                  "ksize": 23
+                },
+                "current_loaded_frame": 156,
+                "enable_velocity_attribute": 0,
+                "enable_speed_attribute": 0,
+                "enable_age_attribute": 0,
+                "enable_color_attribute": 0,
+                "enable_source_id_attribute": 0,
+                "is_mesh_shading_smooth": 1,
+                "duplivert_object": {}
+              },
+              "foam": {
+                "duplivert_object": {},
+                "cache_object": {},
+                "mesh_prefix": "foam",
+                "mesh_file_extension": "wwp",
+                "cache_object_default_name": "whitewater_foam",
+                "import_function_name": "import_wwp",
+                "cache_object_type": "CACHE_OBJECT_TYPE_FOAM"
+              },
+              "bubble": {
+                "duplivert_object": {},
+                "cache_object": {},
+                "mesh_prefix": "bubble",
+                "mesh_file_extension": "wwp",
+                "cache_object_default_name": "whitewater_bubble",
+                "import_function_name": "import_wwp",
+                "cache_object_type": "CACHE_OBJECT_TYPE_BUBBLE"
+              },
+              "spray": {
+                "duplivert_object": {},
+                "cache_object": {},
+                "mesh_prefix": "spray",
+                "mesh_file_extension": "wwp",
+                "cache_object_default_name": "whitewater_spray",
+                "import_function_name": "import_wwp",
+                "cache_object_type": "CACHE_OBJECT_TYPE_SPRAY"
+              },
+              "dust": {
+                "duplivert_object": {},
+                "cache_object": {},
+                "mesh_prefix": "dust",
+                "mesh_file_extension": "wwp",
+                "cache_object_default_name": "whitewater_dust",
+                "import_function_name": "import_wwp",
+                "cache_object_type": "CACHE_OBJECT_TYPE_DUST"
+              },
+              "gl_particles": {
+                "mesh_prefix": "particles",
+                "mesh_file_extension": "fpd"
+              },
+              "gl_force_field": {
+                "mesh_prefix": "forcefield",
+                "mesh_file_extension": "ffd"
+              },
+              "obstacle": {
+                "mesh_prefix": "obstacle",
+                "mesh_file_extension": "bobj",
+                "cache_object_default_name": "debug_obstacle",
+                "import_function_name": "import_bobj",
+                "cache_object_type": "CACHE_OBJECT_TYPE_OBSTACLE",
+                "cache_object": {}
+              }
+            },
+            "whitewater": {
+              "min_max_whitewater_energy_speed": {},
+              "min_max_whitewater_wavecrest_curvature": {},
+              "min_max_whitewater_turbulence": {},
+              "min_max_whitewater_lifespan": {},
+              "min_max_foam_density": {}
+            },
+            "presets": {
+              "preset_stack": {
+                "is_enabled": 0
+              },
+              "current_package": 1,
+              "current_preset": 0,
+              "enable_presets": 0,
+              "deprecated_presets_disabled_on_load": 1
+            },
+            "property_registry": {
+              "properties": [
+                {
+                  "path": "domain.render.render_display",
+                  "label": "Surface Render",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.viewport_display",
+                  "label": "Surface Viewport",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.whitewater_render_display",
+                  "label": "Whitewater Render",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.whitewater_viewport_display",
+                  "label": "Whitewater Viewport",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.render_surface_motion_blur",
+                  "label": "Render Motion Blur",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.override_frame",
+                  "label": "Override Frame",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.render.whitewater_view_settings_mode",
+                  "label": "Whitewater View Mode",
+                  "is_key": 1,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.render_whitewater_pct",
+                  "label": "Whitewater Render Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_WHITEWATER",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.viewport_whitewater_pct",
+                  "label": "Whitewater Viewport Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_WHITEWATER",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.render_foam_pct",
+                  "label": "Foam Render Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.render_bubble_pct",
+                  "label": "Bubble Render Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.render_spray_pct",
+                  "label": "Spray Render Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.render_dust_pct",
+                  "label": "Dust Render Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.viewport_foam_pct",
+                  "label": "Foam Viewport Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.viewport_bubble_pct",
+                  "label": "Bubble Viewport Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.viewport_spray_pct",
+                  "label": "Spray Viewport Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.viewport_dust_pct",
+                  "label": "Dust Viewport Pct",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_view_settings_mode",
+                  "key_value": "VIEW_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.render.whitewater_particle_object_settings_mode",
+                  "label": "Whitewater Particle Mode",
+                  "is_key": 1,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.whitewater_particle_object_mode",
+                  "label": "Whitewater Particle",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_WHITEWATER",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.only_display_whitewater_in_render",
+                  "label": "Whitewater Render Only",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_WHITEWATER",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.whitewater_particle_scale",
+                  "label": "Whitewater Particle Scale",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_WHITEWATER",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.foam_particle_object_mode",
+                  "label": "Foam Particle",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.bubble_particle_object_mode",
+                  "label": "Bubble Particle",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.spray_particle_object_mode",
+                  "label": "Spray Particle",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.dust_particle_object_mode",
+                  "label": "Dust Particle",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.only_display_foam_in_render",
+                  "label": "Foam Render Only",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.only_display_bubble_in_render",
+                  "label": "Bubble Render Only",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.only_display_spray_in_render",
+                  "label": "Spray Render Only",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.only_display_dust_in_render",
+                  "label": "Dust Render Only",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.foam_particle_scale",
+                  "label": "Foam Particle Scale",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.bubble_particle_scale",
+                  "label": "Bubble Particle Scale",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.spray_particle_scale",
+                  "label": "Spray Particle Scale",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.render.dust_particle_scale",
+                  "label": "Dust Particle Scale",
+                  "is_key": 0,
+                  "key_path": "domain.render.whitewater_particle_object_settings_mode",
+                  "key_value": "WHITEWATER_OBJECT_SETTINGS_FOAM_BUBBLE_SPRAY",
+                  "group_id": 2
+                },
+                {
+                  "path": "domain.simulation.resolution",
+                  "label": "Resolution",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.preview_resolution",
+                  "label": "Preview Resolution",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.auto_preview_resolution",
+                  "label": "Auto Preview Resolution",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.lock_cell_size",
+                  "label": "Lock Cell Size",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.frame_rate_mode",
+                  "label": "Frame Rate Mode",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.frame_rate_custom",
+                  "label": "Frame Rate",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.time_scale",
+                  "label": "Time Scale",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.simulation.frame_range_mode",
+                  "label": "Frame Range Mode",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.frame_range_custom",
+                  "label": "Frame Range (Custom)",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.update_settings_on_resume",
+                  "label": "Update Settings on Resume",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.enable_savestates",
+                  "label": "Enable Savestates",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.savestate_interval",
+                  "label": "Savestate Interval",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.delete_outdated_savestates",
+                  "label": "Delete Outdated Savestates",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.simulation.delete_outdated_meshes",
+                  "label": "Delete Outdated Meshes",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 1
+                },
+                {
+                  "path": "domain.surface.subdivisions",
+                  "label": "Subdivisions",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.particle_scale",
+                  "label": "Particle Scale",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.compute_chunk_mode",
+                  "label": "Compute Chunk Mode",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.compute_chunks_fixed",
+                  "label": "Num Compute Chunks (fixed)",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.meshing_volume_mode",
+                  "label": "Meshing Volume Mode",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.export_animated_meshing_volume_object",
+                  "label": "Export Animated Mesh",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.enable_meshing_offset",
+                  "label": "Enable Obstacle Meshing",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.obstacle_meshing_mode",
+                  "label": "Obstacle Meshing Mode",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.remove_mesh_near_domain",
+                  "label": "Remove Mesh Near Domain",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.remove_mesh_near_domain_distance",
+                  "label": "Distance",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.smoothing_value",
+                  "label": "Smoothing Value",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.smoothing_iterations",
+                  "label": "Smoothing Iterations",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.invert_contact_normals",
+                  "label": "Invert Contact Normals",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.generate_motion_blur_data",
+                  "label": "Generate Motion Blur Data",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.enable_velocity_vector_attribute",
+                  "label": "Generate Velocity Attributes",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.enable_speed_attribute",
+                  "label": "Generate Speed Attributes",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "domain.surface.enable_age_attribute",
+                  "label": "Generate Age Attributes",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                }
+              ]
+            }
+          },
+          "last_hide_render_state": 1
+        }
+      },
+      {
+        "name": "outlet",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {
+          "is_active": 0,
+          "object_type": 0,
+          "saved_view_settings": {
+            "hide_render": 0,
+            "show_name": 0,
+            "draw_type": "TEXTURED"
+          },
+          "is_view_settings_saved": 0,
+          "outflow": {
+            "property_registry": {
+              "properties": [
+                {
+                  "path": "outflow.is_enabled",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.remove_fluid",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.remove_whitewater",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.is_inversed",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.export_animated_mesh",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.skip_reexport",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "outflow.force_reexport_on_next_bake",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                }
+              ]
+            },
+            "force_reexport_on_next_bake": 0
+          },
+          "last_hide_render_state": 1
+        }
+      },
+      {
+        "name": "inlet",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {
+          "is_active": 0,
+          "object_type": 0,
+          "saved_view_settings": {
+            "hide_render": 0,
+            "show_name": 0,
+            "draw_type": "TEXTURED"
+          },
+          "is_view_settings_saved": 0,
+          "inflow": {
+            "property_registry": {
+              "properties": [
+                {
+                  "path": "inflow.is_enabled",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.substep_emissions",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.inflow_velocity_mode",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.inflow_velocity",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.append_object_velocity",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.append_object_velocity_influence",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.constrain_fluid_velocity",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.inflow_speed",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.inflow_axis_mode",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.source_id",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.color",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.export_animated_target",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.export_animated_mesh",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.skip_reexport",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                },
+                {
+                  "path": "inflow.force_reexport_on_next_bake",
+                  "label": "",
+                  "is_key": 0,
+                  "key_path": "",
+                  "key_value": "",
+                  "group_id": 0
+                }
+              ]
+            },
+            "inflow_velocity": [
+              0.0,
+              -50.0,
+              -50.0
+            ],
+            "target_object": {},
+            "force_reexport_on_next_bake": 0
+          },
+          "last_hide_render_state": 1
+        }
+      },
+      {
+        "name": "fluid_surface",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.001",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.002",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.003",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.004",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.005",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.006",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.007",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.008",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.009",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.010",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.011",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.012",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.013",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.014",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.015",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.016",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.017",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.018",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Point.019",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "BezierCircle",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      },
+      {
+        "name": "Empty",
+        "is_active": false,
+        "rna_object_type": "TYPE_NONE",
+        "raw_flip_fluid": {}
+      }
+    ],
+    "mantaflow_or_particle_modifiers": [
+      {
+        "object": "culverts array",
+        "modifier": "Fluid",
+        "type": "FLUID",
+        "fluid_type": "EFFECTOR"
+      },
+      {
+        "object": "water boundary",
+        "modifier": "Fluid",
+        "type": "FLUID",
+        "fluid_type": "DOMAIN"
+      },
+      {
+        "object": "water boundary",
+        "modifier": "Liquid Particle System",
+        "type": "PARTICLE_SYSTEM",
+        "fluid_type": null
+      },
+      {
+        "object": "outlet",
+        "modifier": "Fluid",
+        "type": "FLUID",
+        "fluid_type": "FLOW"
+      },
+      {
+        "object": "inlet",
+        "modifier": "Fluid",
+        "type": "FLUID",
+        "fluid_type": "FLOW"
+      }
+    ]
+  },
+  "missing_external_paths": {
+    "libraries": [],
+    "images": [],
+    "sounds": [],
+    "cache_files": [],
+    "flip_idprop_paths": [
+      {
+        "key": "objects[water boundary].flip_fluid.domain.cache.cache_directory",
+        "value": "//culvert array_flip_fluid_cache",
+        "is_windows_path": false,
+        "exists_on_disk": false
+      },
+      {
+        "key": "objects[water boundary].flip_fluid.domain.bake.export_filepath",
+        "value": "C:\\Users\\schlb\\Documents\\work folder\\blender works\\culvert array_flip_fluid_cache\\export\\flipdata.sim",
+        "is_windows_path": true,
+        "exists_on_disk": false
+      }
+    ],
+    "missing_items": [
+      {
+        "kind": "flip_idprop_path",
+        "name": "objects[water boundary].flip_fluid.domain.cache.cache_directory",
+        "filepath": "//culvert array_flip_fluid_cache",
+        "is_windows_path": false
+      },
+      {
+        "kind": "flip_idprop_path",
+        "name": "objects[water boundary].flip_fluid.domain.bake.export_filepath",
+        "filepath": "C:\\Users\\schlb\\Documents\\work folder\\blender works\\culvert array_flip_fluid_cache\\export\\flipdata.sim",
+        "is_windows_path": true
+      }
+    ]
+  },
+  "material_diagnostics": {
+    "materials": [
+      {
+        "name": "Dots Stroke",
+        "users": 2,
+        "is_linked": false,
+        "library_filepath": null,
+        "library_missing": false,
+        "use_nodes": true,
+        "has_node_tree": true,
+        "node_count": 5,
+        "node_types": [
+          "NodeFrame",
+          "ShaderNodeBsdfDiffuse",
+          "ShaderNodeBsdfPrincipled",
+          "ShaderNodeOutputMaterial"
+        ],
+        "undefined_nodes": [],
+        "missing_group_trees": [],
+        "broken_image_nodes": [],
+        "has_output_node": true,
+        "status": "ok"
+      },
+      {
+        "name": "Material",
+        "users": 1,
+        "is_linked": false,
+        "library_filepath": null,
+        "library_missing": false,
+        "use_nodes": true,
+        "has_node_tree": true,
+        "node_count": 2,
+        "node_types": [
+          "ShaderNodeBsdfGlass",
+          "ShaderNodeOutputMaterial"
+        ],
+        "undefined_nodes": [],
+        "missing_group_trees": [],
+        "broken_image_nodes": [],
+        "has_output_node": true,
+        "status": "ok"
+      },
+      {
+        "name": "Water",
+        "users": 1,
+        "is_linked": false,
+        "library_filepath": null,
+        "library_missing": false,
+        "use_nodes": true,
+        "has_node_tree": true,
+        "node_count": 7,
+        "node_types": [
+          "ShaderNodeBsdfTransparent",
+          "ShaderNodeMath",
+          "ShaderNodeMix",
+          "ShaderNodeOutputMaterial",
+          "ShaderNodeTexNoise"
+        ],
+        "undefined_nodes": [],
+        "missing_group_trees": [],
+        "broken_image_nodes": [],
+        "has_output_node": true,
+        "status": "ok"
+      },
+      {
+        "name": "Water.001",
+        "users": 1,
+        "is_linked": false,
+        "library_filepath": null,
+        "library_missing": false,
+        "use_nodes": true,
+        "has_node_tree": true,
+        "node_count": 14,
+        "node_types": [
+          "ShaderNodeBsdfAnisotropic",
+          "ShaderNodeBsdfDiffuse",
+          "ShaderNodeBsdfGlass",
+          "ShaderNodeBsdfTransparent",
+          "ShaderNodeFresnel",
+          "ShaderNodeMath",
+          "ShaderNodeMix",
+          "ShaderNodeMixShader",
+          "ShaderNodeOutputMaterial",
+          "ShaderNodeTexNoise"
+        ],
+        "undefined_nodes": [],
+        "missing_group_trees": [],
+        "broken_image_nodes": [],
+        "has_output_node": true,
+        "status": "ok"
+      }
+    ],
+    "object_slot_issues": []
+  }
+}

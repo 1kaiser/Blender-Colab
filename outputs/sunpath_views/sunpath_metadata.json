@@ -1,0 +1,128 @@
+{
+  "frame": 15,
+  "solar": {
+    "month": 4,
+    "day": 15,
+    "day_of_year": 105,
+    "hour": 12.0,
+    "latitude_deg": 45.0,
+    "declination_deg": 9.481,
+    "elevation_deg": 54.481,
+    "azimuth_deg": 180.0,
+    "used_elevation_deg": 54.481,
+    "used_azimuth_deg": 180.0
+  },
+  "sun_object": "AprilSun",
+  "bbox": {
+    "min": [
+      -3.264447,
+      -5.129016,
+      0.685973
+    ],
+    "max": [
+      7.433732,
+      7.749701,
+      1.835973
+    ],
+    "center": [
+      2.084642,
+      1.310342,
+      1.260973
+    ],
+    "size": [
+      10.698178,
+      12.878717,
+      1.15
+    ],
+    "included_objects": [
+      "culverts array",
+      "fluid_surface"
+    ]
+  },
+  "resolution": [
+    960,
+    720
+  ],
+  "total_render_s": 58.6589,
+  "views": {
+    "top": {
+      "name": "top",
+      "location": [
+        2.0846,
+        1.3103,
+        52.7758
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ortho_scale": 20.2625,
+      "clip_start": 0.01,
+      "clip_end": 515.15,
+      "render_s": 13.203,
+      "output_png": "/content/work/sunpath_views/view_top.png",
+      "output_bytes": 873793
+    },
+    "front": {
+      "name": "front",
+      "location": [
+        2.0846,
+        -50.2045,
+        1.261
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "ortho_scale": 12.6239,
+      "clip_start": 0.01,
+      "clip_end": 515.15,
+      "render_s": 12.2657,
+      "output_png": "/content/work/sunpath_views/view_front.png",
+      "output_bytes": 286866
+    },
+    "side": {
+      "name": "side",
+      "location": [
+        53.5995,
+        1.3103,
+        1.261
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        90.0
+      ],
+      "ortho_scale": 15.1969,
+      "clip_start": 0.01,
+      "clip_end": 515.15,
+      "render_s": 12.1545,
+      "output_png": "/content/work/sunpath_views/view_side.png",
+      "output_bytes": 293707
+    },
+    "isometric": {
+      "name": "isometric",
+      "location": [
+        33.6309,
+        -30.2359,
+        27.0184
+      ],
+      "rotation_deg": [
+        60.0,
+        0.0,
+        45.0
+      ],
+      "ortho_scale": 19.6722,
+      "clip_start": 0.01,
+      "clip_end": 515.15,
+      "render_s": 12.4106,
+      "output_png": "/content/work/sunpath_views/view_isometric.png",
+      "output_bytes": 607445
+    }
+  },
+  "combined_png": "/content/work/sunpath_views/multiview_april_sun.png",
+  "combined_bytes": 723747,
+  "wall_s": 66.5216
+}

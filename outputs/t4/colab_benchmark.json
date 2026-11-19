@@ -1,0 +1,190 @@
+{
+  "telemetry": {
+    "timestamp_utc": "2026-11-19T17:08:57.456346+00:00",
+    "hostname": "33590afa7d95",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "cpu_count": 2,
+    "blender_bin": "/content/work/blender-5.3.0/blender",
+    "blender_version": "Blender 5.3.0",
+    "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+    "ram_gib": 12.67,
+    "gpu_name": "Tesla T4",
+    "gpu_vram_mib": 15360,
+    "driver_version": "580.82.07"
+  },
+  "sanitize": {
+    "mode": "sanitize",
+    "blender_bin": "/content/work/blender-5.3.0/blender",
+    "source_blend": "/content/work/particles.blend",
+    "sanitize": {
+      "action": "sanitize",
+      "source_blend": "/content/work/benchmarks_t4/bench_sanitized.blend",
+      "sanitized_blend": "/content/work/benchmarks_t4/bench_sanitized.blend",
+      "reactivated_objects": [
+        "culverts array->TYPE_OBSTACLE",
+        "inlet->TYPE_INFLOW",
+        "outlet->TYPE_OUTFLOW",
+        "water boundary->TYPE_DOMAIN"
+      ],
+      "scene_config": {
+        "frame_start": 1,
+        "frame_end": 10,
+        "cache_directory": "/content/work/benchmarks_t4/shared_flip_cache",
+        "resolution": 192
+      },
+      "materials": {
+        "repaired": [
+          "Water (upgraded-bare-transparent->water)",
+          "dprops.materials.surface_material=Water",
+          "dprops.materials.whitewater_foam_material=FF Foam",
+          "dprops.materials.whitewater_bubble_material=FF Bubble",
+          "dprops.materials.whitewater_spray_material=FF Spray",
+          "dprops.materials.whitewater_dust_material=FF Dust"
+        ],
+        "preserved_count": 3,
+        "removed_missing_libraries": []
+      }
+    },
+    "wall_s": 1.2857
+  },
+  "render_configs": [
+    {
+      "name": "Legacy Baseline (Per-Frame Spawn + CUDA+CPU)",
+      "short_label": "Legacy\n(Spawn+CUDA+CPU)",
+      "frames": 5,
+      "samples": 64,
+      "wall_s": 163.711,
+      "mean_per_frame_s": 32.7419,
+      "median_per_frame_s": 27.852,
+      "per_frame_s": [
+        20.1589,
+        23.8775,
+        27.852,
+        38.9478,
+        52.8735
+      ],
+      "frames_per_min": 1.83,
+      "speedup_vs_baseline": 1.0
+    },
+    {
+      "name": "Persistent CUDA GPU-Only",
+      "short_label": "Persistent\nCUDA GPU",
+      "frames": 5,
+      "samples": 64,
+      "wall_s": 71.0298,
+      "blender_render_loop_s": 69.1951,
+      "mean_per_frame_s": 13.8389,
+      "first_frame_s": 8.1112,
+      "steady_frame_mean_s": 15.2708,
+      "per_frame_s": [
+        8.1112,
+        8.175,
+        11.1592,
+        17.5159,
+        24.233
+      ],
+      "frames_per_min": 4.22,
+      "speedup_vs_baseline": 2.305
+    },
+    {
+      "name": "Persistent OptiX GPU-Only",
+      "short_label": "Persistent\nOptiX GPU",
+      "frames": 5,
+      "samples": 64,
+      "wall_s": 54.878,
+      "blender_render_loop_s": 52.944,
+      "mean_per_frame_s": 10.5886,
+      "first_frame_s": 11.2259,
+      "steady_frame_mean_s": 10.4293,
+      "per_frame_s": [
+        11.2259,
+        6.7805,
+        8.3644,
+        11.1826,
+        15.3898
+      ],
+      "frames_per_min": 5.47,
+      "speedup_vs_baseline": 2.983
+    },
+    {
+      "name": "Persistent OptiX + Denoise + Adaptive (0.02)",
+      "short_label": "OptiX+Den\n+Adaptive",
+      "frames": 5,
+      "samples": 64,
+      "wall_s": 55.7231,
+      "blender_render_loop_s": 54.2886,
+      "mean_per_frame_s": 10.8565,
+      "first_frame_s": 7.7782,
+      "steady_frame_mean_s": 11.6261,
+      "per_frame_s": [
+        7.7782,
+        7.2588,
+        8.8581,
+        12.7314,
+        17.656
+      ],
+      "frames_per_min": 5.38,
+      "speedup_vs_baseline": 2.938
+    }
+  ],
+  "eevee_probe": {
+    "environment": {
+      "display": "",
+      "wayland_display": "",
+      "vulkan_icds": [],
+      "egl_vendors": [
+        "/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+      ],
+      "vk_icd_filenames_env": "",
+      "xvfb_run": "/usr/bin/xvfb-run",
+      "vulkaninfo": null,
+      "eglinfo": null
+    },
+    "backends": {
+      "vulkan": {
+        "supported": true,
+        "status": "ok",
+        "returncode": 0,
+        "wall_s": 99.0475,
+        "render_s": 97.8735,
+        "engine": "BLENDER_EEVEE",
+        "output_png": "/content/work/benchmarks_t4/05_eevee_probe/eevee_vulkan.png",
+        "output_bytes": 220814,
+        "diagnostic": "Headless EEVEE render succeeded"
+      },
+      "opengl": {
+        "supported": true,
+        "status": "ok",
+        "returncode": 0,
+        "wall_s": 64.5475,
+        "render_s": 63.4774,
+        "engine": "BLENDER_EEVEE",
+        "output_png": "/content/work/benchmarks_t4/05_eevee_probe/eevee_opengl.png",
+        "output_bytes": 220814,
+        "diagnostic": "Headless EEVEE render succeeded"
+      }
+    }
+  },
+  "pipeline_overlap": {
+    "start_frame": 1,
+    "end_frame": 10,
+    "frame_count": 10,
+    "resolution": 192,
+    "samples": 64,
+    "sequential": {
+      "total_with_sanitize_s": 324.4494,
+      "wall_s": 320.7148,
+      "bake_s": 141.5431,
+      "render_s": 179.1717
+    },
+    "interleaved": {
+      "total_with_sanitize_s": 266.248,
+      "wall_s": 264.9548,
+      "bake_s": 208.7474,
+      "render_s": 262.1266
+    },
+    "speedup": 1.21,
+    "time_saved_s": 55.76,
+    "time_saved_pct": 17.39
+  }
+}
