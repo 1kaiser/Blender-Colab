@@ -115,7 +115,7 @@ papermill BlenderColab.ipynb run_output.ipynb \
 | Parameter | Default | Options / Notes |
 |---|---|---|
 | `blender_version` | `"5.3.0"` | `"5.3.0"`, `"5.2.4"` LTS, `"4.5.16"` LTS |
-| `addon_source` | `"build_from_source"` | `"build_from_source"`, `"custom_url"`, `"official_demo"` |
+| `addon_source` | `"prebuilt_release"` | `"prebuilt_release"` (verified `v2.0.0` unwatermarked zip with source fallback), `"build_from_source"`, `"custom_url"`, or `"official_demo"` |
 | `custom_addon_url` | `""` | Zip URL or local path when `addon_source="custom_url"` |
 | `blend_file_url` | `v1.0.0/particles.blend` | Direct URL, Google Drive share URL, or local `.blend` |
 | `pipeline_mode` | `"interleaved"` | `"interleaved"`, `"sequential"`, `"render_only"`, `"bake_only"` |
@@ -140,8 +140,8 @@ papermill BlenderColab.ipynb run_output.ipynb \
 Every notebook step calls clean, composable CLI modules inside [`scripts/`](scripts/):
 
 ```bash
-# 1. Install Blender 5.3.0 + compile unwatermarked FLIP Fluids v1.8.9 extension
-python3 scripts/install_blender_flip.py --blender-version 5.3.0 --work-dir /content/work --addon-source build_from_source --symlink
+# 1. Install Blender 5.3.0 + verified prebuilt unwatermarked FLIP Fluids v1.8.9 (auto-falls back to source build if needed)
+python3 scripts/install_blender_flip.py --blender-version 5.3.0 --work-dir /content/work --addon-source prebuilt_release --symlink
 
 # 2. Inspect .blend geometry, FLIP/Mantaflow state, materials, and stale Windows paths
 /content/work/blender-5.3.0/blender -b /content/work/particles.blend -P scripts/inspect_scene.py -- --json-out /content/work/scene_inspect.json
@@ -177,7 +177,7 @@ python3 scripts/colab_swarm_render.py --blend ./work/particles_sanitized.blend \
 
 - [`scripts/build_flip_fluids.sh`](scripts/build_flip_fluids.sh) clones [`rlguy/Blender-FLIP-Fluids`](https://github.com/rlguy/Blender-FLIP-Fluids) at tag `v1.8.9` (`--depth 1`), strips the legacy `-include .../force_link_glibc_2.5.h` line for modern Ubuntu 22.04/24.04 GCC toolchains, patches `blender_manifest.toml.in` `tagline` to 47 characters (`<= 64` char Blender extension validation limit), and removes the embedded `_vertx/_trix` 3D Demo watermark injection from `src/engine/fluidsimulation.cpp` (`--keep-watermark` opt-out).
 - Builds `libffengine.so` (`5,723,336` bytes on GCC 13.3.0) with `-DWITH_ALEMBIC=OFF -DDISTRIBUTE_SOURCE=OFF`, validates via `blender --command extension validate`, and installs via `blender --command extension install-file -r user_default --enable` followed by `bpy.ops.flip_fluid_operators.complete_installation()` and `bpy.ops.wm.save_userpref()`.
-- [`scripts/install_blender_flip.py`](scripts/install_blender_flip.py) replaces the obsolete `libtcmalloc-minimal4` / `LD_PRELOAD` workaround with minimal `ldd`-driven runtime library checks (`libxkbcommon0`, `libsm6`, `libxi6`, `libxxf86vm1`, `libgl1`, `libegl1`, `libvulkan1`).
+- [`scripts/install_blender_flip.py`](scripts/install_blender_flip.py) defaults to `--addon-source prebuilt_release`, fetching `flip_fluids_addon_1.8.9_linux_x64_ext.zip` from the [`v2.0.0`](https://github.com/1kaiser/Blender-Colab/releases/tag/v2.0.0) release in seconds and automatically falling back to `build_from_source` if validation or `libffengine.so` loading fails on another Linux distro. It replaces the obsolete `libtcmalloc-minimal4` / `LD_PRELOAD` workaround with minimal `ldd`-driven runtime library checks (`libxkbcommon0`, `libsm6`, `libxi6`, `libxxf86vm1`, `libgl1`, `libegl1`, `libvulkan1`).
 
 </details>
 
@@ -229,7 +229,19 @@ Blender-Colab/
 ---
 
 <a id="notes"></a>
-## Sample Release Assets (`v1.0.0`)
+## Release Downloads (`v2.0.0` &amp; `v1.0.0`)
+
+### `v2.0.0` — Prebuilt Unwatermarked FLIP Fluids `v1.8.9` (Ubuntu x64 / Colab)
+
+Built cleanly from [`rlguy/Blender-FLIP-Fluids`](https://github.com/rlguy/Blender-FLIP-Fluids) tag `v1.8.9` on Ubuntu 24.04 (`glibc 2.39`, GCC `13.3.0`, `-DWITH_ALEMBIC=OFF`, portable x86-64 without `-march=native`, Demo watermark stripped):
+
+| Asset | Description | Size | Download |
+|---|---|---:|---|
+| `flip_fluids_addon_1.8.9_linux_x64_ext.zip` | Blender 4.2–5.3 Extension CLI package (`blender_manifest.toml` at root; default `prebuilt_release` target) | 8.6 MiB (`9,017,702 B`) | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v2.0.0/flip_fluids_addon_1.8.9_linux_x64_ext.zip) |
+| `flip_fluids_addon_1.8.9_linux_x64.zip` | Standard `flip_fluids_addon/` folder archive for manual/UI installation | 8.6 MiB (`9,024,470 B`) | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v2.0.0/flip_fluids_addon_1.8.9_linux_x64.zip) |
+| `SHA256SUMS.txt` | SHA-256 checksums (`c69644a8...` ext / `25d9ccee...` folder) | 212 B | [Download](https://github.com/1kaiser/Blender-Colab/releases/download/v2.0.0/SHA256SUMS.txt) |
+
+### Sample Scene Assets (`v1.0.0`)
 
 | Asset | Description | Size | Download |
 |---|---|---:|---|

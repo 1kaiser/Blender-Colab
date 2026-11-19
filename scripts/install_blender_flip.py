@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Install Blender (5.3.0 default, 5.2.4 LTS, 4.5.16 LTS) and FLIP Fluids v1.8.9.
 
-Supports three addon source modes:
-  - build_from_source (default): builds clean unwatermarked v1.8.9 via scripts/build_flip_fluids.sh
+Supports four addon source modes:
+  - prebuilt_release (default): downloads verified unwatermarked v2.0.0 release asset
+    with automatic fallback to build_from_source on download/ABI mismatch
+  - build_from_source: builds clean unwatermarked v1.8.9 via scripts/build_flip_fluids.sh
   - custom_url: installs a FLIP Fluids zip from a URL or local path
   - official_demo: downloads rlguy's prebuilt v1.8.9 Demo zip (warns about 3D Demo watermark)
 """
@@ -30,6 +32,10 @@ BLENDER_VERSIONS = {
 
 FLIP_TAG = "v1.8.9"
 FLIP_VERSION = "1.8.9"
+PREBUILT_RELEASE_URL = (
+    "https://github.com/1kaiser/Blender-Colab/releases/download/"
+    "v2.0.0/flip_fluids_addon_1.8.9_linux_x64_ext.zip"
+)
 OFFICIAL_DEMO_URL = (
     "https://github.com/rlguy/Blender-FLIP-Fluids/releases/download/"
     "v1.8.9/FLIP_Fluids_addon_1.8.9_demo_release_.2026-11-10.zip"
@@ -377,6 +383,62 @@ def is_valid_cached_flip_zip(zip_path: Path, blender_bin: Path | None = None) ->
     return True
 
 
+def build_from_source_addon_zip(
+    args: argparse.Namespace,
+    work_dir: Path,
+    blender_bin: Path,
+) -> tuple[Path, bool]:
+    """Reuse verified source build or compile clean unwatermarked v1.8.9 from source."""
+    addons_dir = work_dir / "addons"
+    addons_dir.mkdir(parents=True, exist_ok=True)
+    candidates = [
+        addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip",
+        addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip",
+        work_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip",
+        work_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip",
+    ]
+    if not args.force_rebuild:
+        for cand in candidates:
+            if cand.is_file():
+                if is_valid_cached_flip_zip(cand, blender_bin):
+                    print(f"[addon] Reusing verified unwatermarked source build: {cand}")
+                    return cand, False
+                print(f"[addon] Removing stale/invalid cached archive: {cand}", flush=True)
+                cand.unlink(missing_ok=True)
+
+    build_script = Path(__file__).resolve().parent / "build_flip_fluids.sh"
+    if not build_script.is_file():
+        raise FileNotFoundError(f"Missing build script: {build_script}")
+
+    src_dir = work_dir / "src" / "Blender-FLIP-Fluids"
+    cmd = [
+        "bash",
+        str(build_script),
+        "--tag",
+        FLIP_TAG,
+        "--out-dir",
+        str(addons_dir),
+        "--src-dir",
+        str(src_dir),
+        "--jobs",
+        str(args.jobs),
+        "--blender-bin",
+        str(blender_bin),
+    ]
+    cmd.append("--with-alembic" if args.with_alembic else "--without-alembic")
+    cmd.append("--no-native" if args.no_native else "--native")
+    if args.march_native:
+        cmd.append("--march-native")
+
+    run_cmd(cmd)
+    ext_zip = addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip"
+    folder_zip = addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip"
+    chosen = ext_zip if ext_zip.is_file() else folder_zip
+    if not chosen.is_file():
+        raise FileNotFoundError(f"Expected built addon zip not found in {addons_dir}")
+    return chosen, True
+
+
 def obtain_addon_zip(
     args: argparse.Namespace,
     work_dir: Path,
@@ -386,53 +448,28 @@ def obtain_addon_zip(
     addons_dir = work_dir / "addons"
     addons_dir.mkdir(parents=True, exist_ok=True)
 
+    if args.addon_source == "prebuilt_release":
+        dest = addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip"
+        if not args.force_rebuild and dest.is_file():
+            if is_valid_cached_flip_zip(dest, blender_bin):
+                print(f"[addon] Reusing verified prebuilt release archive: {dest}")
+                return dest, False
+            print(f"[addon] Removing invalid cached prebuilt archive: {dest}", flush=True)
+            dest.unlink(missing_ok=True)
+        download_file(
+            PREBUILT_RELEASE_URL,
+            dest,
+            label="Blender-Colab v2.0.0 prebuilt FLIP Fluids v1.8.9",
+        )
+        if not is_valid_cached_flip_zip(dest, blender_bin):
+            dest.unlink(missing_ok=True)
+            raise RuntimeError(
+                f"Downloaded prebuilt release zip failed validation: {PREBUILT_RELEASE_URL}"
+            )
+        return dest, False
+
     if args.addon_source == "build_from_source":
-        candidates = [
-            addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip",
-            addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip",
-            work_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip",
-            work_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip",
-        ]
-        if not args.force_rebuild:
-            for cand in candidates:
-                if cand.is_file():
-                    if is_valid_cached_flip_zip(cand, blender_bin):
-                        print(f"[addon] Reusing verified unwatermarked source build: {cand}")
-                        return cand, False
-                    print(f"[addon] Removing stale/invalid cached archive: {cand}", flush=True)
-                    cand.unlink(missing_ok=True)
-
-        build_script = Path(__file__).resolve().parent / "build_flip_fluids.sh"
-        if not build_script.is_file():
-            raise FileNotFoundError(f"Missing build script: {build_script}")
-
-        src_dir = work_dir / "src" / "Blender-FLIP-Fluids"
-        cmd = [
-            "bash",
-            str(build_script),
-            "--tag",
-            FLIP_TAG,
-            "--out-dir",
-            str(addons_dir),
-            "--src-dir",
-            str(src_dir),
-            "--jobs",
-            str(args.jobs),
-            "--blender-bin",
-            str(blender_bin),
-        ]
-        cmd.append("--with-alembic" if args.with_alembic else "--without-alembic")
-        cmd.append("--no-native" if args.no_native else "--native")
-        if args.march_native:
-            cmd.append("--march-native")
-
-        run_cmd(cmd)
-        ext_zip = addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip"
-        folder_zip = addons_dir / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64.zip"
-        chosen = ext_zip if ext_zip.is_file() else folder_zip
-        if not chosen.is_file():
-            raise FileNotFoundError(f"Expected built addon zip not found in {addons_dir}")
-        return chosen, True
+        return build_from_source_addon_zip(args, work_dir, blender_bin)
 
     if args.addon_source == "custom_url":
         target = args.custom_addon_url
@@ -783,9 +820,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--addon-source",
-        choices=["build_from_source", "custom_url", "official_demo"],
-        default="build_from_source",
-        help="How to obtain FLIP Fluids v1.8.9 (default: build_from_source)",
+        choices=["prebuilt_release", "build_from_source", "custom_url", "official_demo"],
+        default="prebuilt_release",
+        help="How to obtain FLIP Fluids v1.8.9 (default: prebuilt_release with source fallback)",
     )
     parser.add_argument(
         "--custom-addon-url",
@@ -881,18 +918,43 @@ def main() -> int:
         skip_apt=args.skip_apt,
     )
 
-    addon_zip, _ = obtain_addon_zip(args, work_dir, blender_bin)
-
     env = os.environ.copy()
     if args.user_config_dir:
         cfg_dir = Path(args.user_config_dir).resolve()
         cfg_dir.mkdir(parents=True, exist_ok=True)
         env["BLENDER_USER_CONFIG"] = str(cfg_dir)
 
-    install_extension_into_blender(blender_bin, addon_zip, env)
-    bootstrap_flip_fluids(blender_bin, env)
-    summary = self_check_blender_flip(blender_bin, env)
+    effective_source = args.addon_source
+    try:
+        addon_zip, _ = obtain_addon_zip(args, work_dir, blender_bin)
+        install_extension_into_blender(blender_bin, addon_zip, env)
+        bootstrap_flip_fluids(blender_bin, env)
+        summary = self_check_blender_flip(blender_bin, env)
+    except Exception as exc:
+        if args.addon_source != "prebuilt_release":
+            raise
+        print(
+            f"\n[install] WARNING: prebuilt_release failed ({exc}).\n"
+            "[install] Falling back to clean unwatermarked build_from_source...",
+            flush=True,
+        )
+        prebuilt_zip = work_dir / "addons" / f"flip_fluids_addon_{FLIP_VERSION}_linux_x64_ext.zip"
+        if prebuilt_zip.is_file():
+            prebuilt_zip.unlink(missing_ok=True)
+        ensure_runtime_and_build_deps(
+            blender_bin,
+            need_build_tools=True,
+            with_alembic=args.with_alembic,
+            skip_apt=args.skip_apt,
+        )
+        addon_zip, _ = build_from_source_addon_zip(args, work_dir, blender_bin)
+        install_extension_into_blender(blender_bin, addon_zip, env)
+        bootstrap_flip_fluids(blender_bin, env)
+        summary = self_check_blender_flip(blender_bin, env)
+        effective_source = "build_from_source_fallback"
+
     summary["addon_source"] = args.addon_source
+    summary["addon_source_effective"] = effective_source
     summary["addon_zip"] = str(addon_zip)
     summary["blender_bin_requested"] = str(blender_bin)
 
@@ -916,7 +978,7 @@ def main() -> int:
     print("=" * 78)
     print(f"  Blender Version      : {summary['blender_version_string']}")
     print(f"  Blender Binary       : {blender_bin}")
-    print(f"  Addon Source Mode    : {args.addon_source}")
+    print(f"  Addon Source Mode    : {args.addon_source} (effective: {effective_source})")
     print(f"  Addon Zip            : {addon_zip}")
     print(f"  Enabled Module       : {summary['enabled_module']}")
     print(f"  FLIP Fluids Version  : {summary['bl_info_version']} ({summary['bl_info_description']})")

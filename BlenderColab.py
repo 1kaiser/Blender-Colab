@@ -30,7 +30,7 @@
 # <summary><b>Architecture & Upgrades in v2.0 (Click to expand)</b></summary>
 #
 # - **Blender 5.3.0** default (with `5.2.4` LTS and `4.5.16` LTS options) extracted cleanly with mirror fallbacks (`download.blender.org`, `mirrors.dotsrc.org`, `ftp.nluug.nl`) and minimal runtime packages—no legacy `libtcmalloc-minimal4` / `LD_PRELOAD` hacks.
-# - **FLIP Fluids v1.8.9 (Clean Source Build)**: Clones `rlguy/Blender-FLIP-Fluids` at tag `v1.8.9`, patches `force_link_glibc_2.5.h` and `blender_manifest.toml.in` tagline length (`<= 64` chars), strips the embedded 3D Demo watermark mesh from `src/engine/fluidsimulation.cpp`, compiles `libffengine.so`, validates via `blender --command extension validate`, and installs as a native Blender 5.x extension (`bl_ext.user_default.flip_fluids_addon`).
+# - **FLIP Fluids v1.8.9 (Clean Unwatermarked `v2.0.0` Prebuilt + Source Fallback)**: Uses unwatermarked `rlguy/Blender-FLIP-Fluids` tag `v1.8.9` (`force_link_glibc_2.5.h` patched, `blender_manifest.toml.in` tagline shortened to `<= 64` chars, `_vertx/_trix` 3D Demo watermark stripped from `src/engine/fluidsimulation.cpp`). Defaults to downloading the prebuilt `v2.0.0` extension zip (`prebuilt_release`) in seconds and automatically falls back to compiling from source (`build_from_source`) on ABI/download errors.
 # - **OptiX Persistent-Data & Interleaved Pipeline**: Runs Cycles GPU-only (`OPTIX` -> `CUDA` -> `NONE`, `use_persistent_data=True`, `transparent_max_bounces >= 64`) in one persistent Blender session, optionally overlapping CPU FLIP simulation baking with GPU OptiX frame rendering by polling `bakefiles/finished######.txt`.
 # - **Standalone Colab Badge Compatibility**: Works directly from a fresh Google Colab VM without cloning beforehand—automatically detects local `scripts/` or fetches `1kaiser/Blender-Colab` into `/content/work`.
 # - **Dual Colab Forms + Papermill**: Uses `# @param` UI controls inside a `tags=["parameters"]` cell, with opt-in `save_to_drive = False` so headless `colab exec` and `papermill` runs never block on Drive OAuth.
@@ -198,7 +198,7 @@ print_runtime_telemetry()
 # | Parameter | Default | Description |
 # |---|---|---|
 # | `blender_version` | `"5.3.0"` | Blender release (`5.3.0`, `5.2.4` LTS, or `4.5.16` LTS). |
-# | `addon_source` | `"build_from_source"` | `build_from_source` (unwatermarked v1.8.9), `custom_url`, or `official_demo`. |
+# | `addon_source` | `"prebuilt_release"` | `prebuilt_release` (unwatermarked v2.0.0 asset, fast), `build_from_source`, `custom_url`, or `official_demo`. |
 # | `custom_addon_url` | `""` | Custom zip URL or local path when `addon_source` is `custom_url`. |
 # | `blend_file_url` | `particles.blend` | Direct HTTP/HTTPS URL, Google Drive share link, or local `.blend` path. |
 # | `pipeline_mode` | `"interleaved"` | `interleaved` (CPU bake \|\| GPU render), `sequential`, `render_only`, or `bake_only`. |
@@ -223,7 +223,7 @@ print_runtime_telemetry()
 # %% tags=["parameters"]
 # @markdown ### Blender & FLIP Fluids Installation
 blender_version = "5.3.0"  # @param ["5.3.0", "5.2.4", "4.5.16"] {allow-input: true}
-addon_source = "build_from_source"  # @param ["build_from_source", "custom_url", "official_demo"]
+addon_source = "prebuilt_release"  # @param ["prebuilt_release", "build_from_source", "custom_url", "official_demo"]
 custom_addon_url = ""  # @param {type:"string"}
 
 # @markdown ### Scene & Simulation Pipeline
@@ -304,12 +304,12 @@ print(
 # %% [markdown]
 # ## 3. Install Blender 5.3.0 + FLIP Fluids v1.8.9
 #
-# > Downloads and verifies Blender, installs minimal runtime dependencies (via `ldd` inspection), builds unwatermarked FLIP Fluids v1.8.9 from source (or uses `custom_url` / `official_demo`), registers the Blender extension, and verifies `libffengine.so`.
+# > Downloads and verifies Blender, installs minimal runtime dependencies (via `ldd` inspection), fetches the verified unwatermarked v2.0.0 FLIP Fluids v1.8.9 package (falling back cleanly to `build_from_source` if needed), registers the Blender extension, and verifies `libffengine.so`.
 #
 # <details>
 # <summary><b>Installation & Unwatermarked Source Build Details (Click to expand)</b></summary>
 #
-# - `scripts/install_blender_flip.py` verifies `ldd` shared libraries and installs only missing X11/OpenGL/Vulkan runtime libraries (`libxkbcommon0`, `libsm6`, `libxi6`, `libxxf86vm1`, `libgl1`, `libegl1`, `libvulkan1`), plus `cmake`/`g++`/`make` when compiling from source.
+# - `scripts/install_blender_flip.py` defaults to `--addon-source prebuilt_release`, fetching `flip_fluids_addon_1.8.9_linux_x64_ext.zip` from `Blender-Colab` `v2.0.0` in seconds and automatically falling back to `build_from_source` if validation or `libffengine.so` loading fails on another Linux distro. It inspects `ldd` shared libraries and installs only missing X11/OpenGL/Vulkan runtime libraries (`libxkbcommon0`, `libsm6`, `libxi6`, `libxxf86vm1`, `libgl1`, `libegl1`, `libvulkan1`), plus `cmake`/`g++`/`make` when compiling from source.
 # - `scripts/build_flip_fluids.sh` clones `rlguy/Blender-FLIP-Fluids` tag `v1.8.9`, removes `-include .../force_link_glibc_2.5.h`, shortens `blender_manifest.toml.in` `tagline` to 47 chars, strips the embedded `_vertx/_trix` 3D Demo watermark mesh from `src/engine/fluidsimulation.cpp`, validates with `blender --command extension validate`, and installs via `blender --command extension install-file -r user_default --enable`.
 # - A headless bootstrap calls `bpy.ops.flip_fluid_operators.complete_installation()` and `bpy.ops.wm.save_userpref()`, then runs a fresh self-check verifying `bl_ext.user_default.flip_fluids_addon` and `FluidSimulation(10,10,10,0.1).get_version()`.
 #
@@ -342,6 +342,7 @@ print("\n[install] Verified installation summary:")
 print(json.dumps({
     "blender_version": install_summary.get("blender_version_string"),
     "blender_binary": BLENDER_BIN,
+    "addon_source_effective": install_summary.get("addon_source_effective"),
     "enabled_module": install_summary.get("enabled_module"),
     "bl_info_version": install_summary.get("bl_info_version"),
     "support_license": install_summary.get("support_license"),
